@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobAdder.API", "JobAdder.API\JobAdder.API.csproj", "{2C34A0D3-F4C3-4FF9-B8FF-822F1530EEAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C34A0D3-F4C3-4FF9-B8FF-822F1530EEAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C34A0D3-F4C3-4FF9-B8FF-822F1530EEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C34A0D3-F4C3-4FF9-B8FF-822F1530EEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C34A0D3-F4C3-4FF9-B8FF-822F1530EEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BADA373D-99FD-4CC1-91B4-0A088FFCE432}
+	EndGlobalSection
+EndGlobal
