@@ -23,8 +23,6 @@ namespace JobAdder.Data
                 {
                     HttpResponseMessage response = await client.GetAsync("candidates");
 
-                    string responseData1 = await response.Content.ReadAsStringAsync();
-
                     var responseData = await response.Content.ReadAsAsync<List<Candidate>>();
 
                     return responseData;

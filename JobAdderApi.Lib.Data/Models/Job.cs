@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace JobAdder.Data.Models
@@ -10,6 +11,24 @@ namespace JobAdder.Data.Models
         public string Name { get; set; }
         public string Company { get; set; }
         public string Skills { get; set; }
-        public string[] SkillTags { get { return this.Skills.Split(','); } }
+        public Dictionary<string, int> WeightedSkills
+        {
+            get
+            {
+                var tags = this.Skills.Split(',').Select(a => a.Trim()).ToList();
+                var weightedSkillTags = new Dictionary<string, int>();
+                var maxWeight = 100;
+
+                for (var i = 1; i <= tags.Count; i++)
+                {
+                    if (weightedSkillTags.ContainsKey(tags[i - 1])) continue;
+
+                    weightedSkillTags.Add(tags[i - 1], maxWeight / i);
+                }
+
+                return weightedSkillTags;
+            }
+        }
+        public List<string> SkillTags { get { return this.Skills.Split(',').Select(a => a.Trim()).ToList(); } }
     }
 }
