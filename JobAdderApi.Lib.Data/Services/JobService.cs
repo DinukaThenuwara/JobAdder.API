@@ -16,9 +16,17 @@ namespace JobAdderApi.Lib.Data.Services
             _jobAdderGateway = jobAdderGateway;
         }
 
-        public Task<List<Job>> GetAllJobs()
+        public async Task<List<Job>> GetAllJobs()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var jobs = await _jobAdderGateway.GetJobs();
+                return jobs;
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

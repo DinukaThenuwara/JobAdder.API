@@ -4,7 +4,7 @@ using System.Text;
 
 namespace JobAdder.Data.Models
 {
-    class JobResponse
+    public class JobResponse
     {
         public List<Job> Jobs { get; set; }
     }

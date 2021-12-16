@@ -50,6 +50,7 @@
     <Compile Include="IJobAdderGateway.cs" />
     <Compile Include="JobAdderGateway.cs" />
     <Compile Include="Models\Candidate.cs" />
+    <Compile Include="Models\CandidateRequest.cs" />
     <Compile Include="Models\CandidateResponse.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\JobResponse.cs" />
