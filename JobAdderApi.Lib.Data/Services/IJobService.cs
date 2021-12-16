@@ -1,14 +1,14 @@
 ﻿using JobAdder.Data.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JobAdder.Data
+namespace JobAdderApi.Lib.Data.Services
 {
-    public interface IJobAdderGateway
+    public interface IJobService
     {
-        Task<List<Job>> GetJobs();
-        Task<List<Candidate>> GetCandidates();
+        Task<List<Job>> GetAllJobs();
     }
 }
