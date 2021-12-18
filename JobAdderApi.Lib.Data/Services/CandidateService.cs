@@ -25,7 +25,7 @@ namespace JobAdderApi.Lib.Data.Services
                 var bestCandidates = new List<Candidate>();
                 var candidates = await _jobAdderGateway.GetCandidates();
 
-                var potentialCandidates = candidates.Where(a => a.Skills.Intersect(request.SkillTags).ToList().Count > 0).ToList();
+                var potentialCandidates = candidates.Where(a => a.Skills.Intersect(request.SkillTags).ToList().Count > 0).ToList(); // select candidates who at lease have 1 matching skill from job skill set
 
                 var evaluatedCandidates = new Dictionary<Candidate, int>();
 
@@ -37,7 +37,7 @@ namespace JobAdderApi.Lib.Data.Services
                     {
                         if (c.WeightedSkills.ContainsKey(s.Key))
                         {
-                            points += c.WeightedSkills[s.Key] * s.Value;
+                            points += c.WeightedSkills[s.Key] * s.Value;                // Calculate points for each matching skill from Job    
                         }
                     }
                     evaluatedCandidates.Add(c, points);
@@ -46,9 +46,9 @@ namespace JobAdderApi.Lib.Data.Services
                 if (evaluatedCandidates.Count == 0)
                     return bestCandidates; 
 
-                var sorted = evaluatedCandidates.OrderByDescending(a => a.Value).ToDictionary(a => a.Key, a => a.Value);
+                var sorted = evaluatedCandidates.OrderByDescending(a => a.Value).ToDictionary(a => a.Key, a => a.Value); // Sort candidates by there points to get candidate with highest points
 
-                var bestMatch = sorted.ElementAt(0);
+                var bestMatch = sorted.ElementAt(0);    // There can be more than 1 candidate with highest points, but as of now only return first candidate.
 
                 bestCandidates.Add(bestMatch.Key);
                 
