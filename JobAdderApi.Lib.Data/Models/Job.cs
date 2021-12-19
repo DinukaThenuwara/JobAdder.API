@@ -1,5 +1,7 @@
-﻿using System;
+﻿using JobAdderApi.Lib.Data.Constants;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 
@@ -17,7 +19,7 @@ namespace JobAdder.Data.Models
             {
                 var tags = this.Skills.Split(',').Select(a => a.Trim()).ToList();
                 var weightedSkillTags = new Dictionary<string, int>();
-                var maxWeight = 100;
+                var maxWeight = Constants.MAX_WEIGHT;
 
                 for (var i = 1; i <= tags.Count; i++)
                 {

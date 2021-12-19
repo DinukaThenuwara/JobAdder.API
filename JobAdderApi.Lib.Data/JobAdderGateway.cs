@@ -1,6 +1,7 @@
 ﻿using JobAdder.Data.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -11,7 +12,8 @@ namespace JobAdder.Data
         private readonly Uri _JobAdderAddress;
         public JobAdderGateway()
         {
-            _JobAdderAddress = new Uri("http://private-76432-jobadder1.apiary-mock.com/");
+            var url = ConfigurationManager.AppSettings["JobAdderAPIUrl"];
+            _JobAdderAddress = new Uri(url);
         }
 
         public async Task<List<Candidate>> GetCandidates()
