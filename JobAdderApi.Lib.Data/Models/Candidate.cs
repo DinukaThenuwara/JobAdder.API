@@ -22,7 +22,7 @@ namespace JobAdder.Data.Models
                 {
                     if (weightedSkillTags.ContainsKey(tags[i - 1])) continue;
 
-                    weightedSkillTags.Add(tags[i - 1], maxWeight / i);
+                    weightedSkillTags.Add(tags[i - 1], (maxWeight / i) + (maxWeight/2));
                 }
 
                 return weightedSkillTags; 
