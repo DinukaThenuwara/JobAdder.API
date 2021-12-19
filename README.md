@@ -1,7 +1,9 @@
 # JobAdderAPI
 
 ## Build and Run instructions
-1. Build and Run
+1. Build solution
+2. Run Unit tests to make sure solution works as expected
+3. Run solution
 
 # Assumptions
 
